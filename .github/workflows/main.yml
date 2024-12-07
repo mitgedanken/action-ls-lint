@@ -1,0 +1,14 @@
+name: main
+
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint Filenames
+        uses: batista/lint-filenames@v2
+        with:
+          input: './'
+          pattern: '^[^\\.].+$'
+      - name: Checkout
+        uses: actions/checkout@v4
